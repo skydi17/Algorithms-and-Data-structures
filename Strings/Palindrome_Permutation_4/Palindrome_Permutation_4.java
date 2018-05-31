@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Palindrome_Permutation_4 {
 
     public static final int ALPHABET = 128;
 

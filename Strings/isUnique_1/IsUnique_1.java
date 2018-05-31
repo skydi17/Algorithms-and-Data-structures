@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 // runtime O(N) = N*log(N)
-public class Main {
+public class IsUnique_1 {
     private static char[] quickSort(char[] str, int l, int r) {
         int i = l, j = r;
         char temp;
