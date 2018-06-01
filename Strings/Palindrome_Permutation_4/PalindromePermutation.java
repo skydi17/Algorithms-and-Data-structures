@@ -1,8 +1,12 @@
 import java.util.Scanner;
 
-public class Palindrome_Permutation_4 {
+//runtime O(N), where N - length of the str
+//TODO try to resolve without second loop (use int var to save all appeared words)
+public class PalindromePermutation {
 
-    public static final int ALPHABET = 128;
+    public static final int ALPHABET =
+            Character.getNumericValue('z') -
+                    Character.getNumericValue('a') + 1;
 
     private static boolean isPalindromePermutation(char[] str) {
         int[] count = new int[ALPHABET];

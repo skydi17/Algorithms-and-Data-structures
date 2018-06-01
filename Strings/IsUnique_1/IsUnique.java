@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
-// runtime O(N) = N*log(N)
-public class IsUnique_1 {
+// runtime O(N*log(N)), where N - length of the str
+// Using counting sort will give us
+// additional data structure but will be faster
+public class IsUnique {
     private static char[] quickSort(char[] str, int l, int r) {
         int i = l, j = r;
         char temp;

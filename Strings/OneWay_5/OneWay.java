@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
-public class Main {
+// runtime O(N)
+// rewrite. It's not working code
+public class OneWay {
 
     private static boolean isEdit (char[] str, char[] modStr) {
         int minLen = str.length > modStr.length ? modStr.length : str.length;
