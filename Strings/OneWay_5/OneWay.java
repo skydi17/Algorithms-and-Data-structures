@@ -1,10 +1,12 @@
 import java.util.Scanner;
 
-// runtime O(N)
-// rewrite. It's not working code
+// runtime O(N), where N - length of shortest string
 public class OneWay {
 
     private static boolean isEdit (char[] str, char[] modStr) {
+        if (Math.abs(str.length - modStr.length) > 1)
+            return Boolean.FALSE;
+
         int minLen = str.length > modStr.length ? modStr.length : str.length;
         for (int i = 0; i < minLen; i++) {
             if (str[i] != modStr[i]) {
