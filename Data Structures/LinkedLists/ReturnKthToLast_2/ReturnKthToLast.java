@@ -1,16 +1,17 @@
 import java.util.Scanner;
 
 // O(N) time
-public class RemoveDups {
+// TODO boring solution - try recursion or use two pointers
+public class ReturnKthToLast {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        int k = in.nextInt();
         int size = in.nextInt();
-        LinkedListNode list = new LinkedListNode(size);
+        Node list = new Node(size);
         for (int i = 0; i < size; i++) {
             list.appendToTail(in.nextInt());
         }
-        list.removeDups();
-        list.readAll();
+        System.out.println(list.returnKthToLast(k));
     }
 }

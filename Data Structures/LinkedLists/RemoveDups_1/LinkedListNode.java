@@ -26,8 +26,9 @@ public class LinkedListNode {
         }
     }
 
-    LinkedListNode removeDups(int size, LinkedListNode list) {
-        Set set = new HashSet<>(size);
+    LinkedListNode removeDups() {
+        LinkedListNode list = this;
+        Set set = new HashSet<>();
         LinkedListNode i = null;
         while (list != null) {
             if (set.contains(list.data)) {
