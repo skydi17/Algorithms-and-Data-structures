@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 // O(N) time
+// TODO implement solution without using buffer
 public class RemoveDups {
 
     public static void main(String[] args) {
