@@ -41,4 +41,15 @@ public class LinkedListNode {
         }
         return list;
     }
+
+    // Task 3 - delete middle node
+    boolean deleteNode(LinkedListNode node) {
+        if (node == null || node.next == null) {
+            return Boolean.FALSE;
+        }
+        LinkedListNode next = node.next;
+        node.data = next.data;
+        node.next = next.next;
+        return Boolean.TRUE;
+    }
 }
