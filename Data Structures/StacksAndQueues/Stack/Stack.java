@@ -36,4 +36,21 @@ public class Stack {
     boolean isEmpty() {
         return top == null;
     }
+
+    //smallest items are on the top
+    Stack sortStack(Stack stack) {
+        Stack result = new Stack();
+        Stack buffer = new Stack();
+        try {
+            if (stack.isEmpty())
+                return stack;
+            result.push(stack.pop());
+            while (!stack.isEmpty()) {
+
+            }
+        } catch (Exception e) {
+
+        }
+        return result;
+    }
 }
