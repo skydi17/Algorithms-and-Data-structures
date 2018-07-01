@@ -2,6 +2,7 @@ public class DoublyLinkedList {
     char data;
     DoublyLinkedList next;
     DoublyLinkedList previous;
+    DoublyLinkedList lastElement;
 
     DoublyLinkedList(char data) {
         this.data = data;
@@ -15,6 +16,7 @@ public class DoublyLinkedList {
         }
         n.next = node;
         node.previous = n;
+        lastElement = node;
     }
 
 
@@ -25,7 +27,7 @@ public class DoublyLinkedList {
         }
         DoublyLinkedList start = this;
         start = start.next;
-        while (start != end) {
+        while (start != end && start.next != end) {
              if (start.data != end.data) {
                  return Boolean.FALSE;
              }
