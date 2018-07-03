@@ -5,7 +5,7 @@ public class Stack {
         private StackNode next;
 
         StackNode(int data){
-        this.data = data;
+            this.data = data;
         }
     }
 
@@ -15,6 +15,9 @@ public class Stack {
     int pop() throws Exception {
         if (top == null) throw new Exception();
         int data = top.data;
+        if (top == null) {
+            return data;
+        }
         top = top.next;
         return data;
     }
@@ -35,22 +38,5 @@ public class Stack {
     // Return true if and only if the stack is empty
     boolean isEmpty() {
         return top == null;
-    }
-
-    //smallest items are on the top
-    Stack sortStack(Stack stack) {
-        Stack result = new Stack();
-        Stack buffer = new Stack();
-        try {
-            if (stack.isEmpty())
-                return stack;
-            result.push(stack.pop());
-            while (!stack.isEmpty()) {
-
-            }
-        } catch (Exception e) {
-
-        }
-        return result;
     }
 }
