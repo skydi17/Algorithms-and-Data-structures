@@ -1,20 +1,22 @@
 //import java.util.Stack;
 
 public class SortStack {
-
-    static Stack insertItem(Stack stack, Stack buffer, Stack result) {
+//TODO try to implement solution without buffer
+    static void insertItem(Stack stack, Stack buffer, Stack result) {
         try {
-            while (!result.isEmpty() || result.peek() > stack.peek()) {
+            while (!result.isEmpty() && (result.peek() < stack.peek())) {
                 buffer.push(result.pop());
             }
             buffer.push(stack.pop());
             while (!result.isEmpty()) {
                 buffer.push(result.pop());
             }
+            while (!buffer.isEmpty()) {
+                result.push(buffer.pop());
+            }
         } catch (Exception e) {
             System.out.println("Something went wrong " + e);
         }
-        return buffer;
     }
 
     //smallest items are on the top
@@ -27,20 +29,10 @@ public class SortStack {
                 return stack;
             result.push(stack.pop());
             while (!stack.isEmpty()) {
-                if (!result.isEmpty() && result.peek() > stack.peek() ||
-                        !buffer.isEmpty() && buffer.peek() > stack.peek()) {
-                    if (result.isEmpty()) {
-                        buffer.push(stack.pop());
-                    } else {
-                        result.push(stack.pop());
-                    }
+                if (!buffer.isEmpty() && buffer.peek() > stack.peek()) {
+                    result.push(stack.pop());
                 } else {
-                    if (buffer.isEmpty()){
-                        buffer = insertItem(stack, buffer, result);
-
-                    } else {
-                        result = insertItem(stack, result, buffer);
-                    }
+                    insertItem(stack, buffer, result);
                 }
             }
         } catch (Exception e) {
