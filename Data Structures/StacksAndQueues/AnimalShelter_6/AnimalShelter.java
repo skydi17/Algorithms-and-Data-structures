@@ -12,9 +12,9 @@ public class AnimalShelter {
     void enqueue(String type) {
         Animal animal;
         if (DOG.equals(type)){
-            animal = new Cat();
-        } else {
             animal = new Dog();
+        } else {
+            animal = new Cat();
         }
         list.addLast(animal);
     }
