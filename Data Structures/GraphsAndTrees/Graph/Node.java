@@ -1,6 +1,7 @@
 class Node {
-    public Node[] children;
-    private int length;
+    private Node[] children;
+    public int length;
+    private boolean marked = false;
 
     Node(int size) {
         children = new Node[size];
@@ -13,6 +14,18 @@ class Node {
 
     public void addChild(Node node) {
         children[length] = node;
-        length++;
+        this.length++;
+    }
+
+    public void setChildren(Node[] children) {
+        this.children = children;
+    }
+
+    void mark() {
+        marked = true;
+    }
+
+    boolean isMarked() {
+        return marked;
     }
 }

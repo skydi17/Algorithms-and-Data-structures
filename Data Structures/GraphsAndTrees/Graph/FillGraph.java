@@ -12,8 +12,11 @@ public class FillGraph {
                     node.addChild(graph.nodes[j]);
                 }
             }
-            graph.nodes[i].children = node.children;
+            graph.nodes[i].setChildren(node.getChildren());
+            graph.nodes[i].length = node.length;
         }
+
+        graph.breadthFirstTraversal(0);
         graph.viewGraph();
     }
 }
