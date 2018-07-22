@@ -16,7 +16,8 @@ public class FillGraph {
             graph.nodes[i].length = node.length;
         }
 
-        graph.breadthFirstTraversal(0);
+        //graph.depthFirstTraversal(graph.nodes[0]);
+        graph.breadthFirstTraversal(graph.nodes[0]);
         graph.viewGraph();
     }
 }

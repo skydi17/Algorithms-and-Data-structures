@@ -23,13 +23,20 @@ public class Graph {
         }
     }
 
-    void depthFirstTraversal() {
+    void depthFirstTraversal(Node node) {
+        if (node == null) return;
+        node.mark();
+        for (int i = 0; i < node.length; i++) {
+            if (!node.getChildren()[i].isMarked()) {
+                depthFirstTraversal(node.getChildren()[i]);
+            }
+        }
 
     }
 
-    void breadthFirstTraversal(int nodeIdx) {
+    void breadthFirstTraversal(Node node) {
+        if (node == null) return;
         LinkedList queue = new LinkedList();
-        Node node = nodes[nodeIdx];
         queue.addLast(node);
         node.mark();
         while (!queue.isEmpty()) {
@@ -43,6 +50,10 @@ public class Graph {
                 }
             }
         }
+    }
+
+    boolean bidirectionalSearch(Node node1, Node node2) {
+        return true;
     }
 
 }
