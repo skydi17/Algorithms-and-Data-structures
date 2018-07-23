@@ -53,7 +53,43 @@ public class Graph {
     }
 
     boolean bidirectionalSearch(Node node1, Node node2) {
-        return true;
+        if (node1 == null || node2 == null) return false;
+
+        LinkedList queue1 = new LinkedList();
+        LinkedList queue2 = new LinkedList();
+        queue1.addLast(node1);
+        node1.colour = Node.Colours.BLUE;
+        queue2.addLast(node2);
+        node2.colour = Node.Colours.RED;
+        while (!queue1.isEmpty() && !queue2.isEmpty()) {
+
+            Node elem = (Node) queue1.removeFirst();
+            Node[] children = elem.getChildren();
+            for (int i = 0; i < elem.length; i++) {
+                if (children[i].colour != Node.Colours.RED) {
+                    if (children[i].colour == null) {
+                        queue1.addLast(children[i]);
+                        children[i].colour = Node.Colours.BLUE;
+                    }
+                } else {
+                    return true;
+                }
+            }
+
+            elem = (Node) queue2.removeFirst();
+            children = elem.getChildren();
+            for (int i = 0; i < elem.length; i++) {
+                if (children[i].colour != Node.Colours.BLUE) {
+                    if (children[i].colour == null) {
+                        queue2.addLast(children[i]);
+                        children[i].colour = Node.Colours.RED;
+                    }
+                } else {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 }

@@ -17,7 +17,8 @@ public class FillGraph {
         }
 
         //graph.depthFirstTraversal(graph.nodes[0]);
-        graph.breadthFirstTraversal(graph.nodes[0]);
+        //graph.breadthFirstTraversal(graph.nodes[0]);
         graph.viewGraph();
+        System.out.println(graph.bidirectionalSearch(graph.nodes[0], graph.nodes[2]));
     }
 }

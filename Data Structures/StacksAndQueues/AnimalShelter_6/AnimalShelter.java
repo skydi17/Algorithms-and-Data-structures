@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 
+//TODO Try to create two queues for dogs and cats. dequeueDog and dequeueCats can run in O(1)
 public class AnimalShelter {
 
     private LinkedList<Animal> list;

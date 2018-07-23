@@ -3,6 +3,10 @@ class Node {
     public int length;
     private boolean marked = false;
 
+    // used for bidirectional search
+    public enum Colours {RED, BLUE}
+    Colours colour;
+
     Node(int size) {
         children = new Node[size];
         length = 0;
