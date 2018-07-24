@@ -1,9 +1,9 @@
 public class TreeNode {
-    String node;
+    int value;
     TreeNode leftChild;
     TreeNode rightChild;
 
-    TreeNode(String node) {
-        this.node = node;
+    TreeNode(int value) {
+        this.value = value;
     }
 }
