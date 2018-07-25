@@ -1,8 +1,8 @@
 public class BinaryTree {
     TreeNode root;
 
-    BinaryTree(int value) {
-        root = new TreeNode(value);
+    BinaryTree(){
+        root = new TreeNode();
     }
 
     void inOrderTraversal(TreeNode node) {
@@ -28,9 +28,5 @@ public class BinaryTree {
             postOrderTraversal(node.rightChild);
             System.out.println(node.value);
         }
-    }
-
-    void add(TreeNode node, TreeNode nodeToAdd) {
-
     }
 }
